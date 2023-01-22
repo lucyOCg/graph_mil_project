@@ -6,25 +6,6 @@ import numpy as np
 import os
 from tqdm import tqdm
 import h5py
- 
-def coords_adjacent(x1,y1,x2,y2, id1, id2):
-    "Function to check if patches are adjacent, using patch coordinates as input"
-    if x2 + 256 == x1 and y1 == y2:
-        adjacent = 1
-    elif x2 - 256 == x1 and y1 == y2:
-        adjacent = 1
-    elif y2 + 256 == y1 and x1 == x2:
-        adjacent = 1
-    elif y2 - 256 == y1 and x1 == x2:
-        adjacent = 1
-    else:
-        adjacent = 0
-    
-    if adjacent == 1:
-        #print(id1, id2)
-        return ([id1, id2])
-    elif adjacent == 0: 
-        return('nothing')
         
 def coords_adjacent2(coords, dictionary):
     "Function to check if patches are adjacent, using patch coordinates as input"
